@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bad Time Simulator: Ultra Fights</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Undertale-inspired browser fight</p>
+          <h1>Bad Time Simulator: Ultra Fights</h1>
+        </div>
+        <div class="controls">
+          <label for="bossSelect">Boss</label>
+          <select id="bossSelect">
+            <option value="0">Ultra Sans</option>
+            <option value="1">Papyrus</option>
+            <option value="2">Gaster</option>
+            <option value="3">Asgore</option>
+          </select>
+          <button id="startBtn">Start Fight</button>
+        </div>
+      </header>
+
+      <main class="game-layout">
+        <section class="arena-panel">
+          <div class="battle-stage">
+            <div class="stage-overlay" id="statusText">Choose a monster and begin.</div>
+            <canvas id="gameCanvas" width="860" height="520"></canvas>
+          </div>
+        </section>
+
+        <aside class="info-panel">
+          <div class="card">
+            <h2 id="bossName">Ultra Sans</h2>
+            <p id="bossDescription">
+              A cosmic, impossible version of the judge of the underground. He always
+              sees the next move before you make it.
+            </p>
+          </div>
+
+          <div class="card stats">
+            <div>
+              <label>HP</label>
+              <div class="hp-bar">
+                <div id="bossHpFill" class="hp-fill boss"></div>
+              </div>
+            </div>
+            <div>
+              <label>Soul</label>
+              <div class="soul-pip" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <div class="card controls-list">
+            <h3>Controls</h3>
+            <ul>
+              <li>Move: Arrow keys or WASD</li>
+              <li>Survive until the boss HP hits 0</li>
+              <li>Press Start Fight to reset</li>
+            </ul>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
